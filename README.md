@@ -1,2 +1,3 @@
-# automateTest
-自动化测试：Selenium，
+# 自动化测试
+### 1.[Selenium](doc/Selenium.md)    
+
