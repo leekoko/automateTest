@@ -1,4 +1,6 @@
-# Selenium
+# Selenium IDE
+
+该Selenium IDE主要应用于firefox浏览器  
 
 ## 1.工具准备
 
@@ -7,8 +9,6 @@
 ## 2.基本录制   
 
 ### 1.校验内容    
-
-#### 1.校验内容  
 
 1. 校验标题
 
@@ -49,6 +49,20 @@ selenium_百度搜索
 6. 添加断点    
 
    右键Toggle Breakpoint，通过断点来调试自动化测试。    
+
+
+### 2.源码修改   
+
+``<link rel="selenium.base" href="http://oa.minstone.com.cn/" />``
+
+添加baseUrl，下面的操作路径就变得简短：
+
+```
+<td>/Login/enter.jsp;jsessionid=QTrhhMTJ3lnh1yyp8L9H5K9xnQ4GcT6d15zzKFZ5dKLb2t2KBTcw!1604708425</td>
+```
+
+
+
 
 
 
