@@ -51,6 +51,8 @@ selenium_百度搜索
    右键Toggle Breakpoint，通过断点来调试自动化测试。    
 
 
+[基础结构](../SourceCode/Hello.html)  
+
 ### 2.源码修改   
 
 ``<link rel="selenium.base" href="http://oa.minstone.com.cn/" />``
@@ -60,6 +62,58 @@ selenium_百度搜索
 ```
 <td>/Login/enter.jsp;jsessionid=QTrhhMTJ3lnh1yyp8L9H5K9xnQ4GcT6d15zzKFZ5dKLb2t2KBTcw!1604708425</td>
 ```
+
+## 3.命令   
+
+#### 1.highlight   
+
+changes the backgroundColor of the specified element yellow.  Useful for debugging.
+
+#### 2.clickAndWait
+
+If the click action causes a new page to load.
+
+#### 3.verifyTitle   
+
+验证标题：错误继续   
+
+#### 4.assertTitle  
+
+断言验证标题：错误停止
+
+#### 5.verifyElementPresent   
+
+验证元素存在与否    
+
+## 4.变量   
+
+#### 1.声明变量&打印变量   
+
+![](../img/p01.png)   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,7 +126,7 @@ selenium_百度搜索
 
 怎么移动内容？？
 
-怎么切换frame后进行选择元素？？   
+学习苦难的部分
 
 
 
