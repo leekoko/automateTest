@@ -91,7 +91,15 @@ If the click action causes a new page to load.
 
 ![](../img/p01.png)   
 
+点击的时候，可以把变量通过Value填进去。
 
+[变量应用](../SourceCode/Variable.html)  
+
+## 5.定位元素   
+
+
+
+视频到第7
 
 
 
