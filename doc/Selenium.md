@@ -99,7 +99,37 @@ If the click action causes a new page to load.
 
 
 
-视频到第7
+### 1.identifier   
+
+identifier = loginFrom   ,identifier可以指定id、name。    
+
+### 2.link定位  
+
+``link=sample页面``   
+
+### 3.增加过滤器
+
+``name=continue value=Clear``   
+
+ 
+
+### 4.其他定位   
+
+#### 1.id定位   
+
+#### 2.name定位     
+
+#### 3.css样式   
+
+组合css：``css=input.className[name='userName']``           
+
+
+
+
+
+
+
+
 
 
 
