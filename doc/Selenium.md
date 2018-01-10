@@ -10,26 +10,9 @@
 
 ### 1.校验内容    
 
-1. 校验标题
+1. 添加命令
 
-```
-assertTitle
-selenium_百度搜索
-```
-
-2. 校验内容
-
-```
-verifyText
-css=div.nums
-*百度为您找到相关结果约*
-```
-
-​	*标识内容为通配    
-
-也可以右键添加   
-
-3. 等待加载
+   等待加载
 
 ```
 waitForTitle
@@ -38,18 +21,17 @@ selenium_百度搜索
 
 ​	防止加载没完执行错误验证    
 
-4. 添加注释
+2. 添加注释
 
    右键 Insert New Comment，在Source模式下也可以对标题等内容进行修改    
 
-5. 保存测试文件
+3. 保存测试文件
 
    右键save Test case，使用.html后缀    
 
-6. 添加断点    
+4. 添加断点    
 
    右键Toggle Breakpoint，通过断点来调试自动化测试。    
-
 
 [基础结构](../SourceCode/Hello.html)  
 
@@ -75,7 +57,7 @@ If the click action causes a new page to load.
 
 #### 3.verifyTitle   
 
-验证标题：错误继续   
+验证标题：错误继续 （一般在进入一个页面的时候使用）     
 
 #### 4.assertTitle  
 
@@ -83,7 +65,11 @@ If the click action causes a new page to load.
 
 #### 5.verifyElementPresent   
 
-验证元素存在与否    
+验证元素存在与否     
+
+#### 6.goBackAndWait   
+
+回退  
 
 ## 4.变量   
 
@@ -93,45 +79,138 @@ If the click action causes a new page to load.
 
 点击的时候，可以把变量通过Value填进去。
 
-[变量应用](../SourceCode/Variable.html)  
+[变量应用](../SourceCode/Variable.html)   
+
+#### 2.变量获取属性值   
+
+```
+C: storeText
+T: css = span.red
+V: len
+```
+
+命令 - 定位 - 变量名   
+
+#### 3.变量调用属性值  
+
+```
+C: stroeEval
+T: Number(storedVars["totalLen"] + Number(storedVars["len"]))
+V: totalLen
+```
+
+计算总值：相当于 +=
+
+#### 4.使用js运算   
+
+```
+C: echo
+T: javascript["平均数："+ storedVars["totalLen"]/27]  
+```
 
 ## 5.定位元素   
 
+### 1.XPath定位（备用）  
 
+1. 绝对路径（不推荐）   
 
-### 1.identifier   
+   ``xpath=/html/body/form[1]``   （不可省略）
 
-identifier = loginFrom   ,identifier可以指定id、name。    
+2. 相对路径
 
-### 2.link定位  
+   ``xpath=//form[input/@name='username']/input[3]``  （``xpath=``可以省略）      
 
-``link=sample页面``   
+   指定下标的位置：
 
-### 3.增加过滤器
+   1. 那个的form标签，哪个form标签，带有input标签。哪个input标签，name为username的input标签。  
 
-``name=continue value=Clear``   
+      （做为参数的，前面要添加@标识``xpath=//form[@id='loginName']``,那个form，哪个form？id为loginName的那个）      
 
- 
+   2. 选中form中的第3个input        
 
-### 4.其他定位   
+### 2.Dom定位器（备用）     
 
-#### 1.id定位   
+1. 根据id定位   
 
-#### 2.name定位     
+   ``dom=document.getElementById['loginForm']``   (``dom=``可以省略)   
 
-#### 3.css样式   
+   ``dom=document.forms['loginForm']``      
+
+2. 脚标定位   
+
+   ``dom=document.form[0]``     
+
+   泛指元素   
+
+   ``dom=document.forms['loginForm'].elements[0]``      
+
+3. name定位   
+
+   ``dom=document.forms['loginForm'].username``   
+
+   泛指元素    
+
+   ``dom=document.forms['loginForm'].elements['username']``   
+
+### 3.其他定位（优先使用）
+
+#### 1.id定位
+
+#### 2.name定位
+
+#### 3.css样式
 
 组合css：``css=input.className[name='userName']``           
 
+#### 4.identifier
 
+``identifier = loginFrom``   ,identifier可以指定id、name。  (``identifier =``可以省略)    
 
+#### 5.link定位
 
+``link=sample页面``    
 
+### 4.增加过滤器  
 
+``name=continue value=Clear``   
 
+## 6.验证  
 
+### 1.assertTitle
 
+```
+C: assertTitle
+T: 百度一下，你就知道
+```
 
+验证标题   
+
+### 2.verifyText   
+
+```
+C: verifyText
+T: xpath=/html/body/form[1]/p
+V: 显示的内容*   
+```
+
+严格：验证文字是否存在，位置是否正确   
+
+*标识内容为通配   
+
+### 3.verifyElementPresent
+
+```
+C: verifyText
+T: xpath=/html/body/form[1]/p
+```
+
+宽松：验证元素位置是否存在
+
+## 7.调试   
+
+### 1.设置起点  
+
+右键 - set start point   
 
 
 
@@ -164,7 +243,7 @@ identifier = loginFrom   ,identifier可以指定id、name。
 
 怎么移动内容？？
 
-学习苦难的部分
+学习难的部分
 
-
+feiman内容，发直接可用的博客    
 
