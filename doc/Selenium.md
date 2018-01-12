@@ -128,6 +128,10 @@ T: javascript["平均数："+ storedVars["totalLen"]/27]
 
    2. 选中form中的第3个input        
 
+3. 模糊匹配
+
+   ``/Root//Person[contains(Blog,'cn')]``:查找带cn的Blog标签   
+
 ### 2.Dom定位器（备用）     
 
 1. 根据id定位   

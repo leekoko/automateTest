@@ -1,3 +1,3 @@
 # 自动化测试
-### 1.[Selenium](doc/Selenium.md)    
+### 1.[Selenium IDE](doc/Selenium.md)    
 
